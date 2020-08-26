@@ -1,6 +1,6 @@
 const net = require('net');
 const { Server } = require('http');
-const moves = ["Move: down", "Move: up", "Move: left", "Move: right"];
+//const moves = ["Move: down", "Move: up", "Move: left", "Move: right"];
 /**
  * Establishes connection with the game server
  */
@@ -12,7 +12,6 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('the connection is successfully established');
     conn.write('Name: SWN');
-    conn.write(`Move: up `)
   });
     // conn.on('connect', () => {
     //   console.log('the connection is successfully established');
@@ -42,4 +41,5 @@ const connect = function () {
 
     return conn;
   }
+  
 module.exports = connect;
