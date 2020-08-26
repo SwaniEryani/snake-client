@@ -1,7 +1,7 @@
-const net = require('net');
-const { Server } = require('http');
-const { IP , PORT } = require('./constants');
-//const moves = ["Move: down", "Move: up", "Move: left", "Move: right"];
+const net          = require('net');
+const { Server }   = require('http');
+const { IP , PORT, Name} = require('./constants');
+
 /**
  * Establishes connection with the game server
  */
@@ -12,7 +12,7 @@ const connect = function () {
   });
   conn.on('connect', () => {
     console.log('the connection is successfully established');
-    conn.write('Name: SWN');
+    conn.write(Name);
   });
     // conn.on('connect', () => {
     //   console.log('the connection is successfully established');
@@ -31,8 +31,9 @@ const connect = function () {
     //     console.log(`${moves[rand]}`);
     //   }, (i+1) * 50);
     // }
-
-
+    conn.on('end', () => {
+      console.log('you ded cuz you idled');
+    });
     
   
     // interpret incoming data as text
@@ -41,4 +42,4 @@ const connect = function () {
     return conn;
   }
   
-module.exports = connect;
+module.exports = {connect} ;
