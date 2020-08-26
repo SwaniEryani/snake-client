@@ -11,7 +11,20 @@ const handleUserInput = function (stdin) {
       connection.write(`Move: right`);
     }else if (key === 'd'){
       connection.write(`Move: down`);
+    }else if (key ==='y'){
+      connection.write("Say: Yaayh")
+    }else if (key ==='g'){
+      connection.write("Say: got it")
+    }else if (key ==='c'){
+      connection.write("Say: can't see you")
     }
+  });
+  connection.on('end', () => {
+    console.log('you ded cuz you idled');
+  });
+  connection.on('error', () => {
+    console.log('try again');
+    process.exit();
   });
 
 }
