@@ -1,9 +1,5 @@
 const IP    = 'localhost';
 const PORT  = 50541;
-// const upOne = 'Move: up';
-// const down  = 'Move: down';
-// const right = 'Move: right';
-// const left  = 'Move: left';
 const Name  = 'Name: SWN';
 const userMsg  = {
   y: 'Say: Yaayh!',

@@ -9,21 +9,6 @@ const handleUserInput = function (stdin) {
    if (key === k){
     connection.write(userMsg[key])
    }
-    // else if (key === 'w'){
-    //   connection.write(upOne);
-    // }else if (key === 'a'){
-    //   connection.write(left);
-    // }else if (key === 's'){
-    //   connection.write(right);
-    // }else if (key === 'd'){
-    //   connection.write(down);
-    // }else if (key ==='y'){
-    //   connection.write("Say: Yaayh")
-    // }else if (key ==='g'){
-    //   connection.write("Say: got it")
-    // }else if (key ==='c'){
-    //   connection.write("Say: can't see you")
-    // }
   });
   connection.on('end', () => {
     console.log('you ded cuz you idled');
