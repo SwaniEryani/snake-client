@@ -1,13 +1,14 @@
 const net = require('net');
 const { Server } = require('http');
+const { IP , PORT } = require('./constants');
 //const moves = ["Move: down", "Move: up", "Move: left", "Move: right"];
 /**
  * Establishes connection with the game server
  */
 const connect = function () {
   const conn = net.createConnection({
-    host: '10.0.2.15',
-    port: 50541
+    host: IP,
+    port: PORT
   });
   conn.on('connect', () => {
     console.log('the connection is successfully established');
@@ -32,9 +33,7 @@ const connect = function () {
     // }
 
 
-    conn.on('end', () => {
-      console.log('you ded cuz you idled');
-    });
+    
   
     // interpret incoming data as text
     conn.setEncoding('utf8');
